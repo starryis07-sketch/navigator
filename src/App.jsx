@@ -3,6 +3,7 @@ import "./App.css";
 
 import affordability from "./data/affordability";
 import bankruptcy from "./data/bankruptcy";
+import familyAssistance from "./data/familyAssistance";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -15,8 +16,13 @@ const roadmaps = [
   {
     label: "I'm considering bankruptcy",
     data: bankruptcy
+  },
+  {
+    label: "My family will help",
+    data: familyAssistance
   }
 ];
+
 function App() {
   const [conversation, setConversation] = useState(null);
 
@@ -47,10 +53,6 @@ function App() {
     </button>
 
   ))}
-
-  <button>
-    My family will help
-  </button>
 
   <button>
     I need my credit
