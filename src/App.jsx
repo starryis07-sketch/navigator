@@ -7,6 +7,7 @@ import familyAssistance from "./data/familyAssistance";
 import creditScore from "./data/creditScore";
 import betterOffer from "./data/betterOffer";
 import slowProgress from "./data/slowProgress";
+import legalThreat from "./data/legalThreat";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -35,6 +36,10 @@ const roadmaps = [
   {
     label: "This isn't working",
     data: slowProgress
+  },
+  {
+    label: "I'm being sued",
+    data: legalThreat
   }
 ];
 
