@@ -7,25 +7,34 @@ function ProgressBar({ currentStage }) {
     "resolution",
   ];
 
-  const format = (stage) =>
-    stage.charAt(0).toUpperCase() + stage.slice(1);
+  const activeIndex = stages.indexOf(currentStage);
 
   return (
     <div className="progressRoadmap">
       {stages.map((stage, index) => (
-        <div className="progressItem" key={stage}>
+        <div className="progressStep" key={stage}>
           <div
-            className={
-              currentStage === stage
-                ? "circle active"
-                : "circle"
-            }
-          />
+            className={`circle ${
+              index < activeIndex
+                ? "completed"
+                : index === activeIndex
+                ? "active"
+                : ""
+            }`}
+          >
+            {index < activeIndex ? "✓" : ""}
+          </div>
 
-          <span>{format(stage)}</span>
+          <span className="stageLabel">
+            {stage.charAt(0).toUpperCase() + stage.slice(1)}
+          </span>
 
           {index < stages.length - 1 && (
-            <div className="line"></div>
+            <div
+              className={`connector ${
+                index < activeIndex ? "completed" : ""
+              }`}
+            ></div>
           )}
         </div>
       ))}
