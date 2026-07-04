@@ -4,6 +4,8 @@ import "./App.css";
 import affordability from "./data/affordability";
 import bankruptcy from "./data/bankruptcy";
 import familyAssistance from "./data/familyAssistance";
+import creditScore from "./data/creditScore";
+import betterOffer from "./data/betterOffer";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -20,6 +22,14 @@ const roadmaps = [
   {
     label: "My family will help",
     data: familyAssistance
+  },
+  {
+    label: "I need my credit",
+    data: creditScore
+  },
+  {
+    label: "I want a better offer",
+    data: betterOffer
   }
 ];
 
@@ -53,10 +63,6 @@ function App() {
     </button>
 
   ))}
-
-  <button>
-    I need my credit
-  </button>
 
 </aside>
 
