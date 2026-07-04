@@ -3,32 +3,29 @@ const affordability = {
 
   stages: {
     discovery: {
-      stage: "Discovery",
-
       question: "What changed financially?",
 
-      why:
-        "Understand the cause before offering solutions.",
+      why: "Understand the cause before discussing solutions.",
+
+      coachTip:
+        "Stay curious. Don't solve the problem yet.",
+
+      tieDown:
+        "Would you agree understanding what changed is the best place to start?",
+
+      transition:
+        "Thanks for explaining that.",
+
+      analogy:
+        "Think of it like a doctor diagnosing symptoms before prescribing treatment.",
 
       listenFor: [
         "Income Loss",
         "Unexpected Expenses",
         "Medical Bills",
-        "Car Repair",
         "Job Loss",
+        "Car Repair",
       ],
-
-      coachTip:
-        "Diagnose before educating. Don't recommend a solution until you understand the customer's situation.",
-
-      tieDown:
-        "Would you agree understanding all your options first would help you make the best decision?",
-
-      transition:
-        "Now that I understand what's changed financially, let's look at the options available to you.",
-
-      analogy:
-        "Think of this like visiting a doctor. Before recommending treatment, the doctor first understands what's causing the symptoms.",
 
       branches: [
         {
@@ -36,11 +33,13 @@ const affordability = {
           label: "Income Decreased",
           nextStage: "diagnosis",
         },
+
         {
           id: "expenses",
           label: "Expenses Increased",
           nextStage: "diagnosis",
         },
+
         {
           id: "both",
           label: "Both",
@@ -50,39 +49,67 @@ const affordability = {
     },
 
     diagnosis: {
-      stage: "Diagnosis",
-
       question:
-        "How long has this financial situation been affecting you?",
+        "How long has your income been affected?",
 
       why:
-        "Determine whether the hardship is temporary or ongoing.",
-
-      listenFor: [
-        "Temporary hardship",
-        "Permanent income loss",
-        "Recent life event",
-      ],
+        "Determine whether the hardship is temporary or long-term.",
 
       coachTip:
-        "Focus on understanding the customer's situation before discussing solutions.",
+        "Understand the timeline before discussing solutions.",
 
       tieDown:
-        "Would you agree finding the right solution depends on understanding your situation completely?",
+        "Would you agree knowing whether this is temporary helps determine the best option?",
 
       transition:
-        "Now let's explore the options that best fit your circumstances.",
+        "That helps me understand your situation better.",
 
       analogy:
-        "Like mapping a route before beginning a trip.",
+        "Like repairing a leak—you need to know if it's a drip or a burst pipe.",
+
+      listenFor: [
+        "Temporary",
+        "Permanent",
+        "Looking for Work",
+      ],
 
       branches: [
         {
-          id: "continue",
-          label: "Continue",
+          id: "temporary",
+          label: "Temporary",
+          nextStage: "education",
+        },
+
+        {
+          id: "permanent",
+          label: "Permanent",
           nextStage: "education",
         },
       ],
+    },
+
+    education: {
+      question:
+        "Would it be okay if I shared an option that may help?",
+
+      why:
+        "Gain permission before presenting a solution.",
+
+      coachTip:
+        "People are more receptive when they choose to listen.",
+
+      tieDown:
+        "Would you be open to hearing one possibility?",
+
+      transition:
+        "Based on what you've shared...",
+
+      analogy:
+        "Think of this as looking at all the routes before choosing one.",
+
+      listenFor: [],
+
+      branches: [],
     },
   },
 };

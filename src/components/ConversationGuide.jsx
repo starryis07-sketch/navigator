@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ProgressBar from "./ProgressBar";
 
 function ConversationGuide({ conversation }) {
-  
-   const [currentStage, setCurrentStage] = useState("discovery");
+  const [currentStage, setCurrentStage] = useState("discovery");
 
-   const stage = conversation?.stages?.[currentStage];
+  // Reset to Discovery whenever a different roadmap is selected
+  useEffect(() => {
+    setCurrentStage("discovery");
+  }, [conversation]);
 
   if (!conversation) {
     return (
@@ -15,60 +18,57 @@ function ConversationGuide({ conversation }) {
     );
   }
 
+  const stage = conversation.stages[currentStage];
+
   return (
     <div className="card">
       <h2>{conversation.title}</h2>
 
-      <div className="roadmap">
-        <span className="active">● Discovery</span>
-        <span>○ Diagnosis</span>
-        <span>○ Education</span>
-        <span>○ Commitment</span>
-        <span>○ Resolution</span>
-      </div>
+      <ProgressBar currentStage={currentStage} />
 
       <div className="section">
-        <h3>🎯 Next Question</h3>
-        <p>{conversation.question}</p>
+        <h3>🎯 Recommended Question</h3>
+        <p>{stage.question}</p>
       </div>
 
       <div className="section">
         <h3>🤔 Why Ask This?</h3>
-        <p>{conversation.why}</p>
+        <p>{stage.why}</p>
       </div>
 
       <div className="section">
         <h3>👂 Listen For</h3>
 
-        <ul>
-          {conversation.listenFor.map((item) => (
-            <li key={item}>✓ {item}</li>
-          ))}
-        </ul>
+        {stage.listenFor.length > 0 ? (
+          <ul>
+            {stage.listenFor.map((item) => (
+              <li key={item}>✓ {item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No specific listening points.</p>
+        )}
       </div>
 
-      <hr />
+      {stage.branches.length > 0 && (
+        <>
+          <hr />
 
-      <div className="section">
-        <h3>What Changed?</h3>
+          <div className="section">
+            <h3>Customer Response</h3>
 
-        <div className="choiceButtons">
-          {conversation.branches.map((branch) => (
-            <button
-              key={branch.id}
-              onClick={() => setNextQuestion(branch.nextQuestion)}
-            >
-              {branch.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {nextQuestion && (
-        <div className="nextQuestion">
-          <h3>➡ Next Question</h3>
-          <p>{nextQuestion}</p>
-        </div>
+            <div className="choiceButtons">
+              {stage.branches.map((branch) => (
+                <button
+                  key={branch.id}
+                  onClick={() => setCurrentStage(branch.nextStage)}
+                >
+                  {branch.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
       )}
     </div>
   );
