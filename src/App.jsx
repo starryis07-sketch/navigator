@@ -6,6 +6,7 @@ import bankruptcy from "./data/bankruptcy";
 import familyAssistance from "./data/familyAssistance";
 import creditScore from "./data/creditScore";
 import betterOffer from "./data/betterOffer";
+import slowProgress from "./data/slowProgress";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -30,6 +31,10 @@ const roadmaps = [
   {
     label: "I want a better offer",
     data: betterOffer
+  },
+  {
+    label: "This isn't working",
+    data: slowProgress
   }
 ];
 
