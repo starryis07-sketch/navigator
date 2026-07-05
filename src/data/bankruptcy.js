@@ -1,6 +1,152 @@
 const bankruptcy = {
   title: "Considering Bankruptcy",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Before making a final decision, would you be open to comparing both options so you know which best fits your situation?",
+        note:
+          "Use after understanding why the customer is considering bankruptcy."
+      },
+      {
+        id: "understand",
+        text:
+          "Would you agree it's important to understand both the advantages and limitations of bankruptcy before deciding?"
+      },
+      {
+        id: "alternatives",
+        text:
+          "If bankruptcy isn't your only option, would you want to know what those alternatives are?"
+      },
+      {
+        id: "compare",
+        text:
+          "Can you see why it's worth comparing every available solution before making a permanent financial decision?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Choosing bankruptcy is like deciding to have surgery. Sometimes it's absolutely the right choice—but most people want a second opinion before making a permanent decision.",
+        note:
+          "Reinforces informed decision-making without discouraging bankruptcy."
+      },
+      {
+        id: "roof",
+        text:
+          "It's like replacing an entire roof because of one leak. Sometimes a major solution is necessary, but it's worth making sure there isn't another effective option."
+      },
+      {
+        id: "car",
+        text:
+          "Think of it like deciding whether to repair or replace a vehicle. The right decision depends on the complete picture."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Bankruptcy is an important option for some people. My goal isn't to talk you out of it—it's to make sure you understand every available option before making a final decision.",
+        note:
+          "Keep the conversation educational, never argumentative."
+      },
+      {
+        id: "options",
+        text:
+          "Many customers initially believe bankruptcy is their only choice until they compare all of the available alternatives."
+      },
+      {
+        id: "confidence",
+        text:
+          "If bankruptcy truly is the best solution for your situation, you'll be able to move forward with confidence knowing you explored every option."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "attorney",
+        title: "Already Spoke With an Attorney",
+
+        whenToUse:
+          "Customer has already received legal advice.",
+
+        recommendations: [
+          "Ask what they learned.",
+          "Clarify any remaining questions.",
+          "Respect legal advice.",
+          "Focus on understanding the customer's goals."
+        ],
+
+        avoid: [
+          "Never provide legal advice.",
+          "Never discourage speaking with an attorney."
+        ]
+      },
+
+      {
+        id: "considering",
+        title: "Considering Bankruptcy",
+
+        whenToUse:
+          "Customer is researching bankruptcy but hasn't committed.",
+
+        recommendations: [
+          "Understand what's driving the decision.",
+          "Discuss available alternatives.",
+          "Review progress already made."
+        ],
+
+        avoid: [
+          "Avoid assuming bankruptcy is the only solution."
+        ]
+      },
+
+      {
+        id: "legalPressure",
+        title: "Legal Pressure",
+
+        whenToUse:
+          "Customer mentions lawsuits, garnishments, or other legal concerns.",
+
+        recommendations: [
+          "Understand the urgency.",
+          "Gather facts before educating.",
+          "Remain empathetic and objective."
+        ],
+
+        avoid: [
+          "Do not provide legal opinions."
+        ]
+      },
+
+      {
+        id: "freshStart",
+        title: "Seeking a Fresh Start",
+
+        whenToUse:
+          "Customer is emotionally exhausted and wants relief.",
+
+        recommendations: [
+          "Acknowledge the emotional burden.",
+          "Focus on the customer's long-term goals.",
+          "Review all available options."
+        ],
+
+        avoid: [
+          "Do not minimize their stress or frustration."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
