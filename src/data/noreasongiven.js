@@ -1,5 +1,149 @@
-const noreasongiven = {
+const noReasonGiven = {
   title: "No Reason Given",
+
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Would you mind sharing a little more so I can make sure I'm giving you the most helpful information before we move forward?",
+        note:
+          "Use when the customer simply says they want to cancel without providing a reason."
+      },
+      {
+        id: "understand",
+        text:
+          "Would you agree it's important that I understand what's changed before we decide on the next step?"
+      },
+      {
+        id: "clarify",
+        text:
+          "If we can identify the real concern together, would that help us determine the best path forward?"
+      },
+      {
+        id: "explore",
+        text:
+          "Can we spend just a couple of minutes making sure we aren't overlooking something important?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "It's like visiting a doctor. Before recommending a treatment, they first need to understand what's causing the symptoms.",
+        note:
+          "Excellent when the customer hasn't identified a reason."
+      },
+      {
+        id: "roadmap",
+        text:
+          "It's hard to choose the best route until you know where you're trying to go."
+      },
+      {
+        id: "toolbox",
+        text:
+          "Using the wrong tool won't solve the problem. First we need to identify exactly what's causing the concern."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I completely respect your decision. Before we finalize everything, I'd just like to understand what changed so I can be sure we're addressing the right concern.",
+        note:
+          "Remain calm and curious."
+      },
+      {
+        id: "discovery",
+        text:
+          "Sometimes what starts as 'I just want to cancel' turns out to be a concern that's easy to address once we understand it."
+      },
+      {
+        id: "clarification",
+        text:
+          "The better I understand what's changed, the more helpful I can be."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "unknown",
+        title: "No Reason Provided",
+
+        whenToUse:
+          "Customer refuses to provide a reason initially.",
+
+        recommendations: [
+          "Stay calm and curious.",
+          "Use open-ended questions.",
+          "Give the customer time to think."
+        ],
+
+        avoid: [
+          "Don't assume the objection."
+        ]
+      },
+
+      {
+        id: "vague",
+        title: "Vague Answers",
+
+        whenToUse:
+          "Customer gives general responses like 'I just don't want it anymore.'",
+
+        recommendations: [
+          "Ask follow-up questions.",
+          "Clarify what changed.",
+          "Listen for emotion or hesitation."
+        ],
+
+        avoid: [
+          "Don't rush into education."
+        ]
+      },
+
+      {
+        id: "multiple",
+        title: "Multiple Concerns",
+
+        whenToUse:
+          "Customer mentions several possible issues.",
+
+        recommendations: [
+          "Ask which concern is the biggest.",
+          "Focus on one issue at a time.",
+          "Guide the conversation."
+        ],
+
+        avoid: [
+          "Don't try to solve everything at once."
+        ]
+      },
+
+      {
+        id: "hidden",
+        title: "Hidden Objection",
+
+        whenToUse:
+          "You believe another roadmap is actually needed.",
+
+        recommendations: [
+          "Continue discovery.",
+          "Identify the primary objection.",
+          "Transition to the appropriate roadmap."
+        ],
+
+        avoid: [
+          "Don't guess."
+        ]
+      }
+    ]
+  },
 
   stages: {
     discovery: {
@@ -214,4 +358,4 @@ const noreasongiven = {
   }
 };
 
-export default noreasongiven;
+export default noReasonGiven;
