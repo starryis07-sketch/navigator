@@ -1,7 +1,60 @@
 const affordability = {
   title: "Affordability",
 
-  stages: {
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "If we can provide some temporary relief without losing the progress you've already made, would you be open to exploring that option?",
+        note:
+          "Great after identifying a temporary hardship or when the customer is worried about affordability."
+      },
+      {
+        id: "options",
+        text:
+          "Would you agree it's important to look at every available option before making a final decision?"
+      },
+      {
+        id: "perspective",
+        text:
+          "Does that help put the temporary score impact into perspective?"
+      },
+      {
+        id: "longterm",
+        text:
+          "Would you agree that's a better long-term solution?"
+      },
+      {
+        id: "firststep",
+        text:
+          "Can you see how that's the necessary first step toward reaching your goal?"
+      },
+      {
+        id: "betteroption",
+        text:
+          "Does that seem like the better option?"
+      },
+      {
+        id: "sound",
+        text:
+          "How does that sound to you?"
+      },
+      {
+        id: "debtfree",
+        text:
+          "Can you see how staying the course gets you closer to becoming debt free?"
+      }
+    ],
+
+    analogies: [],
+
+    rebuttals: [],
+
+    situationCoaching: []
+  },
+   stages: {
     discovery: {
   goal:
     "Understand what changed financially before discussing solutions.",

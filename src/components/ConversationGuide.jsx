@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import ProgressBar from "./ProgressBar";
 
+import ProgressBar from "./ProgressBar";
 import StageGoal from "./StageGoal";
 import OpeningQuestion from "./OpeningQuestion";
 import StopAndListen from "./StopAndListen";
@@ -8,6 +8,7 @@ import ProbingQuestions from "./ProbingQuestions";
 import ListenFor from "./ListenFor";
 import CoachNotes from "./CoachNotes";
 import CustomerResponse from "./CustomerResponse";
+import CoachingToolbox from "./CoachingToolbox";
 
 function ConversationGuide({ conversation }) {
   const [currentStage, setCurrentStage] = useState("discovery");
@@ -68,30 +69,9 @@ function ConversationGuide({ conversation }) {
       )}
 
       {showToolbox && (
-        <div className="section">
-          <h2>🛠 Coaching Toolbox</h2>
-
-          <p>
-            The customer is still declining. Choose one coaching strategy
-            before making another save attempt.
-          </p>
-
-          <div className="choiceButtons">
-            <button>💬 Tie Downs</button>
-            <button>💡 Analogies</button>
-            <button>🔄 Rebuttals</button>
-            <button>🛠 Situation Coaching</button>
-          </div>
-
-          <div className="section">
-            <h3>🛑 Coaching Reminder</h3>
-
-            <p>
-              Choose one coaching tool, then stop and listen before selecting
-              another strategy.
-            </p>
-          </div>
-        </div>
+        <CoachingToolbox
+          coaching={conversation.coaching}
+        />
       )}
     </div>
   );
