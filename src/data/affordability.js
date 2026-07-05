@@ -48,7 +48,26 @@ const affordability = {
       }
     ],
 
-    analogies: [],
+  analogies: [
+      {
+       id: "favorite",
+       favorite: true,
+       text:
+       "Life happens. It's a little like hitting a detour on a road trip. The destination hasn't changed—we just need to find the best way through this stretch.",
+       note:
+       "Excellent for temporary financial hardships. Reinforces that the goal remains the same."
+     },
+     {
+      id: "flat-tire",
+      text:
+      "Think of it like getting a flat tire. You wouldn't abandon the trip—you'd fix the tire and keep moving toward your destination."
+    },
+    {
+      id: "mountain",
+      text:
+      "You've already climbed a large part of the mountain. This challenge doesn't erase the progress you've made; it just means we need to help you over the next section."
+    }
+    ],
 
     rebuttals: [],
 
