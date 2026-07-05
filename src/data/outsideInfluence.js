@@ -1,6 +1,150 @@
 const outsideInfluence = {
   title: "Outside Influence",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Would it be okay if we addressed the specific concern together so you can make the most informed decision possible?",
+        note:
+          "Use after identifying what influenced the customer's decision."
+      },
+      {
+        id: "clarify",
+        text:
+          "Would you agree it's important to base your decision on complete information rather than assumptions?"
+      },
+      {
+        id: "understand",
+        text:
+          "If we can answer that concern today, would that help you feel more confident about your decision?"
+      },
+      {
+        id: "confidence",
+        text:
+          "Do you feel it's worth taking a few minutes to make sure every question has been answered?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "It's like getting a second opinion before making an important decision. Gathering more information helps you make the best choice.",
+        note:
+          "Excellent when someone else has influenced the customer's thinking."
+      },
+      {
+        id: "reviews",
+        text:
+          "Reading one review is rarely enough to understand the whole picture. Looking at all the information leads to a better decision."
+      },
+      {
+        id: "map",
+        text:
+          "Before changing directions on a trip, it's worth checking the entire map instead of one turn."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I completely respect getting advice from people you trust. My goal is simply to make sure you have all the information you need before making your final decision.",
+        note:
+          "Respect the outside influence. Never argue against it."
+      },
+      {
+        id: "questions",
+        text:
+          "Let's make sure we've answered the concern that was raised so you can make the decision that's best for you."
+      },
+      {
+        id: "education",
+        text:
+          "The more complete the information, the easier it is to make a confident decision."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "spouse",
+        title: "Spouse or Family Member",
+
+        whenToUse:
+          "The customer wants to discuss the decision with a spouse or family member.",
+
+        recommendations: [
+          "Ask what concerns were raised.",
+          "Offer to answer those concerns.",
+          "Respect their desire to involve family."
+        ],
+
+        avoid: [
+          "Never criticize family members or encourage the customer to ignore them."
+        ]
+      },
+
+      {
+        id: "reviews",
+        title: "Online Reviews",
+
+        whenToUse:
+          "Customer read reviews that created concern.",
+
+        recommendations: [
+          "Ask what specifically concerned them.",
+          "Address only that concern.",
+          "Provide factual information."
+        ],
+
+        avoid: [
+          "Do not argue about reviews."
+        ]
+      },
+
+      {
+        id: "friend",
+        title: "Friend or Coworker",
+
+        whenToUse:
+          "Customer changed their mind after talking to someone they know.",
+
+        recommendations: [
+          "Discover exactly what was said.",
+          "Clarify misunderstandings.",
+          "Keep the conversation educational."
+        ],
+
+        avoid: [
+          "Never criticize the other person's advice."
+        ]
+      },
+
+      {
+        id: "buyersRemorse",
+        title: "Second Thoughts",
+
+        whenToUse:
+          "Customer is simply reconsidering their decision.",
+
+        recommendations: [
+          "Slow the conversation down.",
+          "Identify the real concern.",
+          "Answer questions one at a time."
+        ],
+
+        avoid: [
+          "Don't assume they want to cancel."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
