@@ -10,6 +10,7 @@ import betterOffer from "./data/betterOffer";
 import slowProgress from "./data/slowProgress";
 import legalThreat from "./data/legalThreat";
 import outsideInfluence from "./data/outsideInfluence";
+import moralEthical from "./data/moralEthical";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -51,6 +52,10 @@ const roadmaps = [
   {
     label: "Outside Influence",
     data: outsideInfluence
+  },
+  {
+    label: "Moral / Ethical Concerns",
+    data: moralEthical
   }
 ];
 
