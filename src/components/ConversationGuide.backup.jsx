@@ -29,19 +29,19 @@ function ConversationGuide({ conversation }) {
 
       <div className="section">
         <h3>🎯 Next Question</h3>
-        <p>{conversation.question}</p>
+        <p>{stage.question}</p>
       </div>
 
       <div className="section">
         <h3>🤔 Why Ask This?</h3>
-        <p>{conversation.why}</p>
+        <p>{stage.why}</p>
       </div>
 
       <div className="section">
         <h3>👂 Listen For</h3>
 
         <ul>
-          {conversation.listenFor.map((item) => (
+          {stage.listenFor.map((item) => (
             <li key={item}>✓ {item}</li>
           ))}
         </ul>
@@ -53,10 +53,10 @@ function ConversationGuide({ conversation }) {
         <h3>What Changed?</h3>
 
         <div className="choiceButtons">
-          {conversation.branches.map((branch) => (
+          {stage.branches.map((branch) => (
             <button
               key={branch.id}
-              onClick={() => setNextQuestion(branch.nextQuestion)}
+              onClick={() => setCurrentStage(branch.nextStage)}
             >
               {branch.label}
             </button>
@@ -67,7 +67,7 @@ function ConversationGuide({ conversation }) {
       {nextQuestion && (
         <div className="nextQuestion">
           <h3>➡ Next Question</h3>
-          <p>{nextQuestion}</p>
+          <p>This roadmap hasn't been converted to the new stage engine yet.</p>
         </div>
       )}
     </div>
