@@ -1,6 +1,127 @@
 const needMoreTime = {
   title: "Need More Time",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "If we answer your remaining questions today, would you feel comfortable making your decision today instead of starting over later?",
+        note:
+          "Use after you've identified that the customer simply needs reassurance or clarification."
+      },
+      {
+        id: "clarity",
+        text:
+          "Would you agree it's better to make a fully informed decision than leave with unanswered questions?"
+      },
+      {
+        id: "confidence",
+        text:
+          "If we can address your biggest concern today, would you feel more confident moving forward?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "It's like taking a road trip. A detour doesn't change your destination—it just means we find the best route forward.",
+        note:
+          "Great for customers who feel overwhelmed or hesitant."
+      },
+      {
+        id: "car",
+        text:
+          "It's like buying a car. Most people don't wait because they need more time—they wait because they still have one unanswered question."
+      },
+      {
+        id: "puzzle",
+        text:
+          "Think of it like finishing a puzzle. You want all the pieces before deciding what the picture looks like."
+      },
+      {
+        id: "book",
+        text:
+          "It's like stopping a book during the last chapter. You're already close to the ending, so let's make sure you have the full story."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Most people who tell me they need more time are really looking for clarity rather than more days. Let's make sure we've answered everything before you decide.",
+        note:
+          "Avoid sounding pushy. Focus on resolving uncertainty."
+      },
+      {
+        id: "questions",
+        text:
+          "Before you leave today, I'd like to make sure every question is answered so you can make the most informed decision possible."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "spouse",
+        title: "Needs To Talk To Spouse",
+
+        whenToUse:
+          "The customer wants someone else's input before deciding.",
+
+        recommendations: [
+          "Find out what concerns they expect their spouse to have.",
+          "Offer to answer those questions now.",
+          "If appropriate, schedule a follow-up when both can participate."
+        ],
+
+        avoid: [
+          "Never discourage involving a spouse or family member."
+        ]
+      },
+
+      {
+        id: "shopping",
+        title: "Shopping Around",
+
+        whenToUse:
+          "Customer wants to compare options before deciding.",
+
+        recommendations: [
+          "Ask what they're hoping to compare.",
+          "Answer unanswered questions before they leave.",
+          "Help them make an informed comparison."
+        ],
+
+        avoid: [
+          "Do not criticize competitors."
+        ]
+      },
+
+      {
+        id: "overwhelmed",
+        title: "Feeling Overwhelmed",
+
+        whenToUse:
+          "Customer is emotionally overloaded and hesitant.",
+
+        recommendations: [
+          "Slow the conversation down.",
+          "Address one concern at a time.",
+          "Confirm understanding before moving forward."
+        ],
+
+        avoid: [
+          "Do not overload the customer with additional information."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
