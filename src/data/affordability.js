@@ -3,48 +3,65 @@ const affordability = {
 
   stages: {
     discovery: {
-      question: "What changed financially?",
+  goal:
+    "Understand what changed financially before discussing solutions.",
 
-      why: "Understand the cause before discussing solutions.",
+  openingQuestion:
+    "What changed financially?",
 
-      coachTip:
-        "Stay curious. Diagnose before offering solutions.",
+  probingQuestions: [
+    "What changed in your finances?",
+    "Have your hours been reduced?",
+    "Are you on a fixed income?",
+    "Are you still paying your creditors directly?",
+    "Have you stopped paying your creditors?",
+    "What changed between when you enrolled and today?",
+    "What do you plan on doing with your debt if you do not move forward with the program?"
+  ],
 
-      tieDown:
-        "Would you agree understanding what changed is the best place to start?",
+  listenFor: [
+    "Job loss",
+    "Reduced hours",
+    "Medical hardship",
+    "Fixed income",
+    "Car repairs",
+    "Unexpected expenses",
+    "Temporary hardship",
+    "Permanent hardship"
+  ],
 
-      transition:
-        "Thanks for explaining that.",
+  coachNotes: [
+    "Ask one question at a time.",
+    "Do not educate yet.",
+    "Allow the customer time to answer.",
+    "Determine whether the hardship is temporary or permanent."
+  ],
 
-      analogy:
-        "Like a doctor diagnosing symptoms before prescribing treatment.",
+  bestPractices: [
+    "Build rapport first.",
+    "Diagnose before recommending.",
+    "Mirror the customer's language."
+  ],
 
-      listenFor: [
-        "Income Loss",
-        "Unexpected Expenses",
-        "Medical Bills",
-        "Job Loss",
-        "Car Repair"
-      ],
+  redFlags: [
+    "Already stopped paying creditors",
+    "Active lawsuit",
+    "Considering bankruptcy"
+  ],
 
-      branches: [
-        {
-          id: "income",
-          label: "Income Decreased",
-          nextStage: "diagnosis"
-        },
-        {
-          id: "expenses",
-          label: "Expenses Increased",
-          nextStage: "diagnosis"
-        },
-        {
-          id: "both",
-          label: "Both",
-          nextStage: "diagnosis"
-        }
-      ]
+  branches: [
+    {
+      id: "temporary",
+      label: "Temporary Hardship",
+      nextStage: "diagnosis"
     },
+    {
+      id: "permanent",
+      label: "Permanent Hardship",
+      nextStage: "diagnosis"
+    }
+  ]
+},
 
     diagnosis: {
       question: "How long has your income been affected?",
