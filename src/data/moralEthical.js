@@ -1,6 +1,150 @@
 const moralEthical = {
   title: "Moral & Ethical Concerns",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Would it be okay if we reviewed how the program works so you can decide whether it aligns with your personal values?",
+        note:
+          "Use after the customer explains their moral or ethical concern."
+      },
+      {
+        id: "understanding",
+        text:
+          "Would you agree it's important to fully understand your options before making a decision?"
+      },
+      {
+        id: "values",
+        text:
+          "If we can answer your questions honestly, would that help you determine whether this program aligns with your beliefs?"
+      },
+      {
+        id: "informed",
+        text:
+          "Can we take a few minutes to make sure you're making the most informed decision possible?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "It's like reading the entire contract before signing it. Understanding all the details helps you decide whether it's the right choice for you.",
+        note:
+          "Focus on informed decision-making rather than persuasion."
+      },
+      {
+        id: "compass",
+        text:
+          "Your values are like a compass. The goal is to make sure you have accurate information before deciding which direction to go."
+      },
+      {
+        id: "foundation",
+        text:
+          "Building any important decision starts with a solid understanding of the facts."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I completely respect your values. My role isn't to change your beliefs—it's simply to answer your questions so you can make the decision that's right for you.",
+        note:
+          "Always acknowledge the customer's perspective."
+      },
+      {
+        id: "education",
+        text:
+          "The more information you have, the more confident you can be that your decision reflects your personal values."
+      },
+      {
+        id: "clarify",
+        text:
+          "If there's anything about the program you're uncertain about, I'd be happy to clarify it."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "religious",
+        title: "Religious Beliefs",
+
+        whenToUse:
+          "Customer mentions faith or religious guidance.",
+
+        recommendations: [
+          "Listen respectfully.",
+          "Ask clarifying questions.",
+          "Provide factual information only."
+        ],
+
+        avoid: [
+          "Never debate or interpret religious beliefs."
+        ]
+      },
+
+      {
+        id: "integrity",
+        title: "Personal Integrity",
+
+        whenToUse:
+          "Customer feels the program conflicts with their personal values.",
+
+        recommendations: [
+          "Understand the concern.",
+          "Clarify misunderstandings.",
+          "Allow the customer to decide."
+        ],
+
+        avoid: [
+          "Never challenge their integrity."
+        ]
+      },
+
+      {
+        id: "familyValues",
+        title: "Family Values",
+
+        whenToUse:
+          "Customer references family expectations or upbringing.",
+
+        recommendations: [
+          "Respect those values.",
+          "Answer questions objectively.",
+          "Focus on informed decision-making."
+        ],
+
+        avoid: [
+          "Never criticize family beliefs."
+        ]
+      },
+
+      {
+        id: "guilt",
+        title: "Guilt or Shame",
+
+        whenToUse:
+          "Customer expresses guilt about debt resolution.",
+
+        recommendations: [
+          "Acknowledge the emotion.",
+          "Avoid minimizing their feelings.",
+          "Provide clear education."
+        ],
+
+        avoid: [
+          "Don't tell the customer how they should feel."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
