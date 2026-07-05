@@ -7,13 +7,15 @@ import StopAndListen from "./StopAndListen";
 import ProbingQuestions from "./ProbingQuestions";
 import ListenFor from "./ListenFor";
 import CoachNotes from "./CoachNotes";
+import CustomerResponse from "./CustomerResponse";
 
 function ConversationGuide({ conversation }) {
   const [currentStage, setCurrentStage] = useState("discovery");
+  const [showToolbox, setShowToolbox] = useState(false);
 
-  // Reset to Discovery whenever a different roadmap is selected
   useEffect(() => {
     setCurrentStage("discovery");
+    setShowToolbox(false);
   }, [conversation]);
 
   if (!conversation) {
@@ -27,7 +29,6 @@ function ConversationGuide({ conversation }) {
 
   const stage = conversation.stages[currentStage];
 
-  // Supports both Version 1.0 and Version 2.0 roadmaps
   const goal = stage.goal;
   const openingQuestion = stage.openingQuestion || stage.question;
   const probingQuestions = stage.probingQuestions || [];
@@ -59,24 +60,38 @@ function ConversationGuide({ conversation }) {
       )}
 
       {stage.branches.length > 0 && (
-        <>
-          <hr />
+        <CustomerResponse
+          branches={stage.branches}
+          onBranchClick={setCurrentStage}
+          onOpenToolbox={() => setShowToolbox(true)}
+        />
+      )}
+
+      {showToolbox && (
+        <div className="section">
+          <h2>🛠 Coaching Toolbox</h2>
+
+          <p>
+            The customer is still declining. Choose one coaching strategy
+            before making another save attempt.
+          </p>
+
+          <div className="choiceButtons">
+            <button>💬 Tie Downs</button>
+            <button>💡 Analogies</button>
+            <button>🔄 Rebuttals</button>
+            <button>🛠 Situation Coaching</button>
+          </div>
 
           <div className="section">
-            <h3>Customer Response</h3>
+            <h3>🛑 Coaching Reminder</h3>
 
-            <div className="choiceButtons">
-              {stage.branches.map((branch) => (
-                <button
-                  key={branch.id}
-                  onClick={() => setCurrentStage(branch.nextStage)}
-                >
-                  {branch.label}
-                </button>
-              ))}
-            </div>
+            <p>
+              Choose one coaching tool, then stop and listen before selecting
+              another strategy.
+            </p>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
