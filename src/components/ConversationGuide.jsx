@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import ProgressBar from "./ProgressBar";
 
+import StageGoal from "./StageGoal";
+import OpeningQuestion from "./OpeningQuestion";
+import StopAndListen from "./StopAndListen";
+import ProbingQuestions from "./ProbingQuestions";
+import ListenFor from "./ListenFor";
+import CoachNotes from "./CoachNotes";
+
 function ConversationGuide({ conversation }) {
   const [currentStage, setCurrentStage] = useState("discovery");
 
@@ -20,7 +27,7 @@ function ConversationGuide({ conversation }) {
 
   const stage = conversation.stages[currentStage];
 
-  // Support both old and new roadmap formats
+  // Supports both Version 1.0 and Version 2.0 roadmaps
   const goal = stage.goal;
   const openingQuestion = stage.openingQuestion || stage.question;
   const probingQuestions = stage.probingQuestions || [];
@@ -32,63 +39,17 @@ function ConversationGuide({ conversation }) {
 
       <ProgressBar currentStage={currentStage} />
 
-      {goal && (
-        <div className="section">
-          <h3>🎯 Stage Goal</h3>
-          <p>{goal}</p>
-        </div>
-      )}
+      <StageGoal goal={goal} />
 
-      <div className="section">
-        <h3>❓ Opening Question</h3>
-        <p>{openingQuestion}</p>
-      </div>
+      <OpeningQuestion question={openingQuestion} />
 
-      <div className="section">
-        <h3>🛑 Stop & Listen</h3>
-        <p>
-          Ask your question, then pause. Give the customer time to answer
-          before asking another question.
-        </p>
-      </div>
+      <StopAndListen />
 
-      {probingQuestions.length > 0 && (
-        <div className="section">
-          <h3>🔍 Probing Questions</h3>
+      <ProbingQuestions questions={probingQuestions} />
 
-          <ul>
-            {probingQuestions.map((question) => (
-              <li key={question}>{question}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <ListenFor items={stage.listenFor} />
 
-      <div className="section">
-        <h3>👂 Listen For</h3>
-
-        {stage.listenFor.length > 0 ? (
-          <ul>
-            {stage.listenFor.map((item) => (
-              <li key={item}>✓ {item}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No specific listening points.</p>
-        )}
-      </div>
-
-      {coachNotes.length > 0 && (
-        <div className="section">
-          <h3>🧠 Coach Notes</h3>
-
-          <ul>
-            {coachNotes.map((note) => (
-              <li key={note}>• {note}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <CoachNotes notes={coachNotes} />
 
       {stage.why && (
         <div className="section">
