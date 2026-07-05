@@ -69,10 +69,107 @@ const affordability = {
     }
     ],
 
-    rebuttals: [],
+    rebuttals: [
+    {
+    id: "favorite",
+    favorite: true,
+    text:
+      "I understand things are difficult right now, but let's consider your long-term financial goals. The debt isn't going anywhere, and our program was designed around helping people through financial hardships.",
+    note:
+      "Lead with empathy, then redirect the conversation toward the customer's long-term objective."
+    },
+    {
+    id: "hardship",
+    text:
+      "We're not the creditors—we're a hardship-based program built to help make resolving debt more affordable."
+    },
+    {
+    id: "alternatives",
+    text:
+      "Let's look at the alternatives. Bankruptcy isn't the right fit for everyone, especially if rebuilding credit is important. Working directly with creditors can also be challenging because they represent their own interests."
+    },
+    {
+    id: "help",
+    text:
+      "If you're having a hard time right now, let me see what options may be available. I'm confident we can explore a solution that helps you through this difficult period."
+    }
+    ],
 
-    situationCoaching: []
-  },
+    situationCoaching: [
+    {
+    id: "temporary-hardship",
+    title: "Temporary Hardship",
+
+    whenToUse:
+      "The customer expects their financial situation to improve.",
+
+    recommendations: [
+      "Explore temporary deposit adjustments.",
+      "Reinforce the progress already made.",
+      "Focus on preserving momentum toward becoming debt free.",
+      "Ask whether temporary relief would help them stay enrolled."
+    ],
+
+    avoid: [
+      "Assuming they want to cancel immediately.",
+      "Jumping into rebuttals before diagnosing the hardship."
+    ]
+    },
+
+    {
+    id: "progress-exists",
+    title: "Customer Has Progress",
+
+    whenToUse:
+      "The customer has already invested time or money into the program.",
+
+    recommendations: [
+      "Acknowledge the progress they've already made.",
+      "Remind them they have momentum worth protecting.",
+      "Position temporary relief before cancellation."
+    ],
+
+    avoid: [
+      "Ignoring the work they've already invested."
+    ]
+    },
+
+    {
+    id: "offers-exist",
+    title: "Settlement Offers Exist",
+
+    whenToUse:
+      "There are active settlement offers on the account.",
+
+    recommendations: [
+      "Review how changes could affect current offers.",
+      "Help the customer understand what may happen if they leave now."
+    ],
+
+    avoid: [
+      "Guaranteeing offers will remain available."
+    ]
+    },
+
+    {
+    id: "no-offers",
+
+    title: "No Offers Yet",
+
+    whenToUse:
+      "The customer is still accumulating funds before negotiations begin.",
+
+    recommendations: [
+      "Explain that building savings is what allows negotiations later.",
+      "Reinforce that today's deposits create tomorrow's opportunities."
+    ],
+
+    avoid: [
+      "Making it sound like no progress has been made."
+    ]
+    }
+    ],
+    },
    stages: {
     discovery: {
   goal:

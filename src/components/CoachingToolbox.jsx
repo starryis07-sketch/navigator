@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TieDowns from "./TieDowns";
 import Analogies from "./Analogies";
+import Rebuttals from "./Rebuttals";
+import SituationCoaching from "./SituationCoaching";
 
 function CoachingToolbox({ coaching }) {
   const [activeTool, setActiveTool] = useState(null);
@@ -24,12 +26,12 @@ function CoachingToolbox({ coaching }) {
               💡 Analogies
             </button>
 
-            <button disabled>
-              🔄 Rebuttals (Coming Soon)
+            <button onClick={() => setActiveTool("rebuttals")}>
+              🔄 Rebuttals
             </button>
 
-            <button disabled>
-              🛠 Situation Coaching (Coming Soon)
+            <button onClick={() => setActiveTool("situationCoaching")}>
+              🛠 Situation Coaching
             </button>
           </div>
         </>
@@ -52,6 +54,28 @@ function CoachingToolbox({ coaching }) {
           </button>
 
           <Analogies items={coaching.analogies} />
+        </>
+      )}
+
+      {activeTool === "rebuttals" && (
+        <>
+          <button onClick={() => setActiveTool(null)}>
+            ← Back to Coaching Toolbox
+          </button>
+
+          <Rebuttals items={coaching.rebuttals} />
+        </>
+      )}
+
+      {activeTool === "situationCoaching" && (
+        <>
+          <button onClick={() => setActiveTool(null)}>
+            ← Back to Coaching Toolbox
+          </button>
+
+          <SituationCoaching
+            items={coaching.situationCoaching}
+          />
         </>
       )}
     </div>
