@@ -9,6 +9,7 @@ import creditScore from "./data/creditScore";
 import betterOffer from "./data/betterOffer";
 import slowProgress from "./data/slowProgress";
 import legalThreat from "./data/legalThreat";
+import outsideInfluence from "./data/outsideInfluence";
 
 import ConversationGuide from "./components/ConversationGuide";
 import Toolbox from "./components/Toolbox";
@@ -46,6 +47,10 @@ const roadmaps = [
   {
     label: "I'm being sued",
     data: legalThreat
+  },
+  {
+    label: "Outside Influence",
+    data: outsideInfluence
   }
 ];
 
