@@ -1,6 +1,157 @@
 const creditScore = {
   title: "Credit Score",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Does that help put the temporary score impact into perspective?",
+        note:
+          "Use after educating the customer about the difference between temporary credit impact and long-term financial health.",
+        whenToUse:
+          "Customer is focused on today's score rather than becoming debt free."
+      },
+      {
+        id: "foundation",
+        text:
+          "Would you agree becoming debt free is the first step toward rebuilding your credit?",
+        whenToUse:
+          "Customer believes protecting today's score is more important than resolving debt."
+      },
+      {
+        id: "longterm",
+        text:
+          "Can you see how resolving the debt creates a stronger financial foundation?",
+        whenToUse:
+          "Customer is thinking about future financial goals."
+      },
+      {
+        id: "betterPath",
+        text:
+          "Would you agree that's the better long-term solution?",
+        whenToUse:
+          "Customer understands the education but is still hesitant."
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Building credit is like building a house. A strong foundation comes before everything else.",
+        note:
+          "Foundation first, then growth."
+      },
+      {
+        id: "reportCard",
+        text:
+          "Think of your credit score like a report card. One bad grade doesn't determine your future. Consistent improvement changes the overall result."
+      },
+      {
+        id: "twoSteps",
+        text:
+          "Sometimes you take one step back so you can take two steps forward."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I completely understand why your credit score is important. My concern is that protecting today's score while remaining buried in debt often creates a much bigger financial challenge over time.",
+        note:
+          "Lead with empathy before educating."
+      },
+      {
+        id: "longTerm",
+        text:
+          "Our goal isn't simply improving a credit score. It's helping you build long-term financial stability."
+      },
+      {
+        id: "education",
+        text:
+          "Credit can recover over time. Eliminating overwhelming debt often creates a much stronger financial future."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "home",
+        title: "Buying a Home",
+
+        whenToUse:
+          "Customer is concerned about qualifying for a mortgage.",
+
+        recommendations: [
+          "Determine purchase timeline.",
+          "Discuss long-term financial health.",
+          "Educate without making promises."
+        ],
+
+        avoid: [
+          "Do not guarantee mortgage qualification."
+        ]
+      },
+
+      {
+        id: "vehicle",
+        title: "Buying a Vehicle",
+
+        whenToUse:
+          "Customer needs financing for transportation.",
+
+        recommendations: [
+          "Determine urgency.",
+          "Discuss available options.",
+          "Keep focus on overall financial improvement."
+        ],
+
+        avoid: [
+          "Avoid making lending predictions."
+        ]
+      },
+
+      {
+        id: "employment",
+        title: "Employment Concern",
+
+        whenToUse:
+          "Customer is worried about employment or background checks.",
+
+        recommendations: [
+          "Ask questions before assuming.",
+          "Determine whether credit is actually part of the hiring process."
+        ],
+
+        avoid: [
+          "Do not assume every employer checks credit."
+        ]
+      },
+
+      {
+        id: "general",
+        title: "General Credit Concern",
+
+        whenToUse:
+          "Customer simply wants to protect their credit score.",
+
+        recommendations: [
+          "Educate on temporary versus long-term impact.",
+          "Refocus on becoming debt free.",
+          "Use the Foundation analogy."
+        ],
+
+        avoid: [
+          "Avoid arguing about credit scores."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
@@ -10,7 +161,7 @@ const creditScore = {
         "Identify the customer's specific concern before providing education.",
 
       coachTip:
-        "Don't assume they're trying to buy a home or car. Discover the reason first.",
+        "Don't assume they're buying a home or car. Discover the reason first.",
 
       tieDown:
         "Would you agree it's important we understand your goal before discussing options?",
@@ -41,7 +192,7 @@ const creditScore = {
           nextStage: "diagnosis"
         },
         {
-          id: "Employment",
+          id: "employment",
           label: "Employment",
           nextStage: "diagnosis"
         }
@@ -53,10 +204,10 @@ const creditScore = {
         "When are you planning to make that purchase or need your credit?",
 
       why:
-        "Determine the timeline and urgency of the customer's concern.",
+        "Determine the timeline and urgency.",
 
       coachTip:
-        "The timeline often determines the best conversation.",
+        "The timeline often changes the conversation.",
 
       tieDown:
         "Would you say that's your biggest priority right now?",
@@ -92,10 +243,10 @@ const creditScore = {
         "Would it be okay if I explained how debt settlement and credit recovery typically work over time?",
 
       why:
-        "Ensure the customer understands the long-term picture before making a decision.",
+        "Educate before asking for commitment.",
 
       coachTip:
-        "Focus on education rather than trying to 'win' the argument.",
+        "Keep the focus on long-term financial health.",
 
       tieDown:
         "Would that information help you make the best decision?",
@@ -104,7 +255,7 @@ const creditScore = {
         "Let me explain what we typically see.",
 
       analogy:
-        "Think of rebuilding credit like recovering from an injury—it takes time, but progress happens with the right plan.",
+        "Rebuilding credit is like recovering from an injury. It takes time, but consistent progress leads to recovery.",
 
       listenFor: [],
 
@@ -122,10 +273,10 @@ const creditScore = {
         "Knowing that, do you feel comfortable continuing toward your long-term financial goals?",
 
       why:
-        "Determine whether the customer is ready to move forward.",
+        "Gain commitment after education.",
 
       coachTip:
-        "Connect today's decision with tomorrow's financial goals.",
+        "Connect today's decision with tomorrow's goals.",
 
       tieDown:
         "Does that make sense based on what we've discussed?",
@@ -155,7 +306,7 @@ const creditScore = {
         "Summarize the agreed plan and confirm the customer's next steps.",
 
       why:
-        "End the conversation with clarity and confidence.",
+        "End with clarity and confidence.",
 
       coachTip:
         "Confirm expectations and thank the customer.",
