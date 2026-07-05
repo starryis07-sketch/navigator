@@ -1,6 +1,150 @@
 const slowProgress = {
   title: "Slow Progress",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Would it be helpful if we reviewed the progress you've already made so you have the complete picture before making a decision?",
+        note:
+          "Use after the customer explains why they feel the program isn't progressing."
+      },
+      {
+        id: "expectations",
+        text:
+          "Would you agree it's important to compare where you expected to be with where you actually are today?"
+      },
+      {
+        id: "milestones",
+        text:
+          "If we can identify the progress that's already been made, would that help you decide on the best next step?"
+      },
+      {
+        id: "finish",
+        text:
+          "Can you see why it's important to look at the entire journey instead of only today's snapshot?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Running a marathon doesn't always feel rewarding mile by mile, but every mile brings you closer to the finish line.",
+        note:
+          "Excellent when the customer feels they're not progressing fast enough."
+      },
+      {
+        id: "tree",
+        text:
+          "Watching a tree grow can feel slow until you compare it to where it started."
+      },
+      {
+        id: "roadTrip",
+        text:
+          "On a long road trip it can feel like you're not getting anywhere until you look back at how many miles you've already traveled."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I understand why it feels frustrating. My goal is to review where you are today so you can decide based on your actual progress rather than how it feels in the moment.",
+        note:
+          "Acknowledge the frustration before reviewing progress."
+      },
+      {
+        id: "progress",
+        text:
+          "Many customers feel discouraged until they see everything that's already been accomplished."
+      },
+      {
+        id: "timeline",
+        text:
+          "Sometimes progress is easier to recognize when we step back and look at the bigger picture."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "noSettlements",
+        title: "No Settlements Yet",
+
+        whenToUse:
+          "Customer believes nothing has happened.",
+
+        recommendations: [
+          "Review account milestones.",
+          "Discuss the normal settlement timeline.",
+          "Focus on measurable progress."
+        ],
+
+        avoid: [
+          "Don't promise settlement dates."
+        ]
+      },
+
+      {
+        id: "timeline",
+        title: "Taking Longer Than Expected",
+
+        whenToUse:
+          "Customer expected faster results.",
+
+        recommendations: [
+          "Review expectations.",
+          "Explain where they are in the process.",
+          "Discuss next milestones."
+        ],
+
+        avoid: [
+          "Don't minimize their frustration."
+        ]
+      },
+
+      {
+        id: "collections",
+        title: "Still Receiving Collection Calls",
+
+        whenToUse:
+          "Customer believes calls should have stopped.",
+
+        recommendations: [
+          "Explain what is normal.",
+          "Review available resources.",
+          "Answer specific concerns."
+        ],
+
+        avoid: [
+          "Don't guarantee collection activity will stop immediately."
+        ]
+      },
+
+      {
+        id: "fatigue",
+        title: "Program Fatigue",
+
+        whenToUse:
+          "Customer is tired of making payments or waiting.",
+
+        recommendations: [
+          "Acknowledge the emotional fatigue.",
+          "Review progress already made.",
+          "Reconnect them with their original goal."
+        ],
+
+        avoid: [
+          "Don't dismiss their frustration."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:
