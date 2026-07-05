@@ -1,6 +1,149 @@
 const legalThreat = {
   title: "Legal Threat",
 
+  coaching: {
+    tieDowns: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "Would it be okay if we reviewed where you are in the legal process before discussing your options?",
+        note:
+          "Gather the facts before discussing possible solutions."
+      },
+      {
+        id: "understand",
+        text:
+          "Would you agree it's important to understand exactly where things stand before deciding what to do next?"
+      },
+      {
+        id: "options",
+        text:
+          "If there are still options available, would you like to review them together?"
+      },
+      {
+        id: "clarify",
+        text:
+          "Can we take a couple of minutes to make sure you have the complete picture before making your decision?"
+      }
+    ],
+
+    analogies: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "It's like using a GPS. Before deciding which way to go, you first need to know exactly where you are.",
+        note:
+          "Great for explaining why discovery comes first."
+      },
+      {
+        id: "doctor",
+        text:
+          "Just like a doctor gathers information before recommending treatment, it's important to understand your legal situation before reviewing options."
+      },
+      {
+        id: "roadmap",
+        text:
+          "Before taking the next exit, it's important to know where you are on the map."
+      }
+    ],
+
+    rebuttals: [
+      {
+        id: "favorite",
+        favorite: true,
+        text:
+          "I understand this situation can feel overwhelming. My goal is simply to understand where things stand so we can review the options that may still be available.",
+        note:
+          "Remain calm and never provide legal advice."
+      },
+      {
+        id: "education",
+        text:
+          "The more we understand about your situation, the better we can discuss what options may still exist."
+      },
+      {
+        id: "facts",
+        text:
+          "Let's focus on the facts first so you can make an informed decision."
+      }
+    ],
+
+    situationCoaching: [
+      {
+        id: "served",
+        title: "Served With Legal Papers",
+
+        whenToUse:
+          "Customer has already been served.",
+
+        recommendations: [
+          "Determine dates.",
+          "Ask whether an attorney is involved.",
+          "Review available program options."
+        ],
+
+        avoid: [
+          "Never provide legal advice."
+        ]
+      },
+
+      {
+        id: "garnishment",
+        title: "Wage Garnishment",
+
+        whenToUse:
+          "Customer mentions garnishment.",
+
+        recommendations: [
+          "Gather facts.",
+          "Review account status.",
+          "Discuss available program options."
+        ],
+
+        avoid: [
+          "Don't speculate about legal outcomes."
+        ]
+      },
+
+      {
+        id: "attorney",
+        title: "Attorney Involved",
+
+        whenToUse:
+          "Customer already has legal counsel.",
+
+        recommendations: [
+          "Respect legal representation.",
+          "Answer program questions only."
+        ],
+
+        avoid: [
+          "Never contradict legal counsel."
+        ]
+      },
+
+      {
+        id: "lawsuit",
+        title: "Pending Lawsuit",
+
+        whenToUse:
+          "Customer is concerned about an active lawsuit.",
+
+        recommendations: [
+          "Stay calm.",
+          "Gather information.",
+          "Focus on available program options."
+        ],
+
+        avoid: [
+          "Don't predict legal outcomes."
+        ]
+      }
+    ]
+  },
+
   stages: {
     discovery: {
       question:

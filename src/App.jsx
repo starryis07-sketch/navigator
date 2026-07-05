@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-import noreasongiven from "./data/noreasongiven";
+import noreasongiven from "./data/noReasonGiven";
 import affordability from "./data/affordability";
 import bankruptcy from "./data/bankruptcy";
 import familyAssistance from "./data/familyAssistance";
